@@ -1,0 +1,12 @@
+version: '3'
+services:
+  auto_backup:
+    image: registry.cn-hangzhou.aliyuncs.com/mobilenow/mn_mongo_backup:3.4-accor
+    environment:
+      - MONGO_URL=mongodb://mongo:27017
+    links:
+      - mongo:mongo
+    depends_on:
+      - mongo
+    volumes:
+      - /var/backups/wechatnow:/var/backups/mongodb

@@ -1,6 +1,7 @@
 #!/bin/bash
-
 set -e
+
+env >> /etc/mongodb.env
 
 CRON_SCHEDULE=${CRON_SCHEDULE:-0 2 * * *}
 
